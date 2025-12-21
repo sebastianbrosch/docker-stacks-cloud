@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set the version of the various services.
-export VERSION_TRAEFIK=3.4.1
+export VERSION_TRAEFIK=3.6.5
 
 # export all environment variables from external .env file.
 # the docker stack deploy command can use these variables for substitution.

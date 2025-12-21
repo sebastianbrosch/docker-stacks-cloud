@@ -17,7 +17,7 @@ api:
   dashboard: true
   insecure: false
   debug: false
-  disableDashboardAd: true
+  disabledashboardad: true
 certificatesResolvers:
   acme-resolver:
     acme:
@@ -25,3 +25,4 @@ certificatesResolvers:
       storage: "/letsencrypt/acme.json"
       httpChallenge:
         entryPoint: web
+ping: {}

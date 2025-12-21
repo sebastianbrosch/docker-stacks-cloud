@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # set the version of the various services.
-export VERSION_OWNCLOUD=7.1.3
-export VERSION_TIKA=3.1.0.0
+export VERSION_OWNCLOUD=7.3.1
+export VERSION_TIKA=3.2.3.0
 
 # export all environment variables from external .env file.
 # the docker compose command can use these variables for substitution.
