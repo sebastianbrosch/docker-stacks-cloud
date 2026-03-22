@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   owncloud:
-    image: owncloud/ocis:${VERSION_OWNCLOUD:-7.3.1}
+    image: owncloud/ocis:${VERSION_OWNCLOUD:-8.0.1}
     entrypoint:
       - /bin/sh
     command: ["-c", "ocis init || true; ocis server"]
