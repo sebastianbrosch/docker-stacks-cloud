@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   owncloud:
-    image: owncloud/ocis:${VERSION_OWNCLOUD:-8.0.1}
+    image: owncloud/ocis:${VERSION_OWNCLOUD:-8.1.0}
     entrypoint:
       - /bin/sh
     command: ["-c", "ocis init || true; ocis server"]
@@ -42,7 +42,7 @@ services:
         - "traefik.http.services.owncloud.loadbalancer.server.port=9200"
         - "traefik.docker.network=traefik-public"
   tika:
-    image: apache/tika:${VERSION_TIKA:-3.2.3.0}
+    image: apache/tika:${VERSION_TIKA:-3.3.1.0}
     networks:
       - owncloud-private
 
