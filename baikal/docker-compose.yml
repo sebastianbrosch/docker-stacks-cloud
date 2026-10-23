@@ -4,7 +4,6 @@ services:
   baikal:
     image: ckulka/baikal:${VERSION_BAIKAL:-0.10.1-nginx}
     volumes:
-      - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - ./config:/var/www/baikal/config
       - ./specific:/var/www/baikal/Specific

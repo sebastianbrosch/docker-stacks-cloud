@@ -4,7 +4,6 @@ services:
   syncthing:
     image: syncthing/syncthing:${VERSION_SYNCTHING:-2.1.5}
     volumes:
-      - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - ./sync-folders:/var/syncthing
     ports:
