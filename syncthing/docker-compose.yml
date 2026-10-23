@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   syncthing:
-    image: syncthing/syncthing:${VERSION_SYNCTHING:-2.1.5}
+    image: syncthing/syncthing:${VERSION_SYNCTHING:-2.1.7}
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./sync-folders:/var/syncthing
