@@ -1,0 +1,36 @@
+services:
+  wikijs:
+    image: requarks/wiki:${VERSION_WIKIJS:-3.5.0}
+    environment:
+      - DB_HOST=${DATABASE_HOST:-wikijs-db}
+      - DB_USER=${DATABASE_USER:-wikijs}
+      - DB_PASS=${DATABASE_PASS:-wikijs}
+      - DB_NAME=${DATABASE_NAME:-wikijs}
+    networks:
+      - traefik-public
+      - wikijs-private
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.wikijs.rule=Host(`${SERVER_DOMAIN:-example.org}`)"
+        - "traefik.http.routers.wikijs.service=wikijs"
+        - "traefik.http.services.wikijs.loadbalancer.server.port=3000"
+        - "traefik.docker.network=traefik-public"
+  wikijs-db:
+    image: postgres:${VERSION_POSTGRES:-18.7}
+    environment:
+      - POSTGRES_DB=${DATABASE_NAME:-wikijs}
+      - POSTGRES_USER=${DATABASE_USER:-wikijs}
+      - POSTGRES_PASSWORD=${DATABASE_PASS:-wikijs}
+    volumes:
+      - wikijs-db-data:/var/lib/postgresql
+    networks:
+      - wikijs-private
+
+volumes:
+  wikijs-db-data:
+
+networks:
+  traefik-public:
+    external: true
+  wikijs-private:

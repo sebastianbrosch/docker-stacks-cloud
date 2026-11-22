@@ -39,6 +39,24 @@ Baikal is a tool for synchronizing appointments and contacts across multiple dev
 
 - `SERVER_DOMAIN`: The domain to access the instance of Baikal.
 
+## Wiki.js
+
+[Wiki.js](https://js.wiki/) is a modern, web-based, open-source software for creating and managing knowledge bases and documentation.
+
+### Environment Variables
+
+| Variable | Default |
+| --- | --- |
+| `DATABASE_HOST` | wikijs-db |
+| `DATABASE_NAME` | wikijs |
+| `DATABASE_PASS` | wikijs |
+| `DATABASE_USER` | wikijs |
+| `SERVER_DOMAIN` | example.org |
+| `VERSION_POSTGRES` | 18.7 |
+| `VERSION_WIKIJS` | 3.5.0 |
+
+You can define these environment variables in a `.env` file next to the `compose.yaml` file.
+
 ## Install a Docker Stack
 You can use the install script `install.sh` to install a Docker Stack. The install script supports the following parameters:
 
